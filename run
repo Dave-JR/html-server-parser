@@ -21,6 +21,7 @@ spinner() {
 cleanup() {
     echo "Cleaning up..."
     pkill -P $$
+    tput cnorm
     exit 0
 }
 
