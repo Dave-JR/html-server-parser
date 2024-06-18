@@ -63,8 +63,8 @@ tput civis
 
 # Scan the IP block
 for i in {1..254}; do
-    curl -sL -o /dev/null -w "%{url_effective}\n" --max-time 10 -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3" -H "Accept-Language: en-US,en;q=0.9" -H "Connection: keep-alive" $ip_block.$i/$url_path | grep -v $ip_block &
-done
+    curl -sL -o /dev/null -w "%{url_effective}\n" --max-time 10 -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3" -H "Accept-Language: en-US,en;q=0.9" -H "Connection: keep-alive" $ip_block.$i/$url_path | grep -v $ip_block
+done &
 
 # Show spinner while the task is running
 spinner
