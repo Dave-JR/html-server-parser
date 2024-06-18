@@ -9,13 +9,12 @@ spinner() {
         local temp=${spinstr#?}
         tput sc
         tput cup $(tput lines) 0
-        printf " %c " "$spinstr"
+        printf "%c" "$spinstr"
         tput rc
         local spinstr=$temp${spinstr%"$temp"}
         sleep $delay
     done
     tput cup $(tput lines) 0
-    printf "    \b\b\b\b"
 }
 
 # Function to clean up background processes
